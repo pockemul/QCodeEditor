@@ -6,9 +6,14 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_AUTOMOC On)
 set(CMAKE_AUTORCC ON)
 
-find_package(Qt5Core    CONFIG REQUIRED)
-find_package(Qt5Widgets CONFIG REQUIRED)
-find_package(Qt5Gui     CONFIG REQUIRED)
+#find_package(QCodeEditor REQUIRED)
+find_package(Qt6 COMPONENTS
+    Core
+    Gui
+    Widgets
+    REQUIRED)
+
+add_library(QCodeEditor ..)
 
 add_executable(QCodeEditorExample
     resources/demo_resources.qrc
@@ -19,11 +24,12 @@ add_executable(QCodeEditorExample
 
 target_include_directories(QCodeEditorExample PUBLIC
     include
+    ../include
 )
 
 target_link_libraries(QCodeEditorExample
-    Qt5::Core
-    Qt5::Widgets
-    Qt5::Gui
-    QCodeEditor
+    Qt6::Core
+    Qt6::Widgets
+    Qt6::Gui
+    C:/dev/PockEmul/QCodeEditor/build/Desktop_Qt_6_7_3_MSVC2019_64bit-Release/QCodeEditor.lib
 )

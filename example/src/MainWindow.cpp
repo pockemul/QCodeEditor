@@ -22,6 +22,7 @@
 #include <QSpinBox>
 #include <QGroupBox>
 #include <QLabel>
+#include <QFile>
 
 MainWindow::MainWindow(QWidget* parent) :
     QMainWindow(parent),
